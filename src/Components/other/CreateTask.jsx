@@ -3,24 +3,20 @@ import { AuthContext } from '../../Context/AuthProvider'
 
 const CreateTask = () => {
   const [userData,setUserData] = useContext(AuthContext)
-  // yeh function hum isliye bana rhe hai jn hum login se admin me ja rhe hai or admin page fill kr ke task ko submit kr rhe hai to jo fill kiya tha vo khail nhi ho rha h to function bana rhe jo kud se task sumbmit krne me khali ho jye
   const [taskTitle,setTaskTitle] = useState('')
   const [taskDate,setTaskDate] = useState('')
   const [assignTo,setAssignTo] = useState('')
   const [taskDescription,setTaskDescription] = useState('')
   const [category,setCategory] = useState('')
 
-  // data kaise aaye ga to bana ho ga ek object ke form me or jo phle se created array hai ussme add on krn hoga
+  
   const [newTask,setNewTask] = useState({})
 
-
-  // yha pe sn se last me task ko create kare hai
   const submitHandler = (e) =>{
     e.preventDefault()
 
     setNewTask({taskTitle,taskDate,taskDescription,category,active:false,newTask:true,failed:false,completed:false})
     const data = userData
-    // ek particaular ka data
     data.forEach(function(elem){
       if(assignTo == elem.firstName){
         elem.tasks.push(newTask)

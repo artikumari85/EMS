@@ -1,17 +1,6 @@
 import React, { useState } from 'react'
 
 const Header = (props) => {
-
-  // const [username,setUserName]=useState('')
-  // if(!data){
-  //   setUsername('Admin')
-  // } else{
-  //   setUsername(data.firstName)
-  // }
-
-  // isko hum reload ke liye banye hai jb humlohin me employee or admin fill krte hai to page open hota hai employee or admin ka pr jb hum page reload karte the to
-  // login phir se open ho jata tha fill krne ke liye new value pr ab aisa nhi hoga reload krne pe nhi open hoga login ka page logout button ko clock krne pe open hoga
-  // or jn lohout biuuton click kare ge to appliction me se loggedinuser bhi clear ho gi!
   const logOutUser = () =>{
     localStorage.setItem('loggedInUser','')
     props.changeUser('')
@@ -27,4 +16,4 @@ const Header = (props) => {
   )
 }
 
-export default Header
+export default Header;

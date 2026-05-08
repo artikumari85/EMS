@@ -1,23 +1,16 @@
 import React, { useState } from 'react'
 
 const Login = ({handleLogin}) => {
-  // console.log(handleLogin)  is ko yha na likha ke e.prevent ke niche likha hai or handlelogin jo hai vo child ke through parents ko pass kiya gya h
-
-    // two way binding
     const[email,setEmail]=useState('')
     const [password,setPassword]=useState('')
 
     const submitHandler=(e)=>{
     e.preventDefault()
     handleLogin(email,password)
-    // console.log('email is',email)
-    // console.log('password is',password)
 
     setEmail("")
     setPassword("")
   }
-
-
 
   return (
     <div className='flex items-center justify-center h-screen w-screen'>

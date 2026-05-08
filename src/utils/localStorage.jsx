@@ -228,19 +228,17 @@ const employees = [
     "password": "123"
   }]
 
-//   AB IS DATA KO SAHI TARIKE SE SET KRNA HAI OR SAHI TARIKE SE GET KRNA HAI
+
 export const setLocalStorage = ()=>{
-    localStorage.setItem('employees',JSON.stringify(employees))            /* yaha pe hum JSON.stringify use kare ge kyu ki local storage me data jo hai object ke form me aa rha hai*/
+    localStorage.setItem('employees',JSON.stringify(employees))   
     localStorage.setItem('admin',JSON.stringify(admin))
 
 }
 
 export const getLocalStorage = ()=>{
-   const employees = JSON.parse(localStorage.getItem('employees') )              /* data jo hai vo string ke form me aa rha hai humko array ke form me krna hai to */
+   const employees = JSON.parse(localStorage.getItem('employees') )           
 //    console.log(JSON.parse(data))
   const admin = JSON.parse(localStorage.getItem('admin'))
-  // console.log(employees,admin)
-  // console.log krne ki jagha hum yha return kr dete or yeh jo hua h vo authProvider ke anar use ke liya hua h
   return {employees,admin}
 
 
